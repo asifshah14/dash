@@ -8,6 +8,16 @@ The platform is built as a modern single-page application with a React frontend 
 
 ## Recent Changes
 
+**November 20, 2025 - Supabase to Neon PostgreSQL Migration:**
+- Migrated from Supabase to Replit's built-in Neon PostgreSQL database
+- Replaced SupabaseStorage with DrizzleStorage implementation using Drizzle ORM
+- Installed required packages: @neondatabase/serverless, ws, @types/ws, @types/node, drizzle-kit
+- Created drizzle.config.ts for database configuration and migrations
+- Added db:push script to package.json for schema synchronization
+- Successfully migrated database schema with demo_requests and consultation_requests tables
+- Removed all Supabase dependencies and related code
+- Verified application works correctly with new database backend
+
 **November 9, 2025 - Production Deployment Fixed:**
 - Removed `tsconfig-paths/register` from start script (incompatible with Node.js ESM)
 - Added `.js` extensions to all local imports in server code (required for ESM)
@@ -78,27 +88,30 @@ Preferred communication style: Simple, everyday language.
 - Dual source structure (both `src/` and `client/src/` directories present)
 
 **Data Layer:**
-- In-memory storage implementation (`MemStorage`) for demo/consultation requests
-- Storage interface pattern allowing easy swapping of persistence mechanisms
+- DrizzleStorage implementation for persistent database operations
+- Storage interface pattern (IStorage) for clean architecture
 - Schema validation using Zod with Drizzle integration
+- Neon PostgreSQL serverless database with WebSocket support
 
 ### Data Storage Solutions
 
 **Current Implementation:**
-- In-memory storage for development and demonstration
-- Data structures for demo requests and consultation requests with status tracking
+- Neon PostgreSQL database (serverless) via Replit's built-in database
+- Drizzle ORM for type-safe database queries
+- Two primary tables: `demo_requests` and `consultation_requests`
 
 **Schema Design:**
-- PostgreSQL-ready schema definitions using Drizzle ORM
-- Two primary tables: `demo_requests` and `consultation_requests`
-- Fields include: name, email, company, job title, service interest, status, timestamps
-- UUID primary keys with automatic timestamp management
+- PostgreSQL schema definitions using Drizzle ORM
+- `demo_requests` table: id (uuid), name, email, company, job_title, status, created_at, updated_at
+- `consultation_requests` table: id (uuid), name, email, company, job_title, service_interest, message, status, created_at, updated_at
+- UUID primary keys with automatic generation
+- Automatic timestamp management with defaultNow()
 - Zod validation schemas for type-safe data insertion
 
-**Planned Database:**
-- Drizzle ORM configured for PostgreSQL integration
-- Postgres client library (`postgres`) included in dependencies
-- Schema definitions ready for migration to persistent database
+**Database Configuration:**
+- Drizzle Kit configured for schema migrations
+- Database credentials managed via DATABASE_URL environment variable
+- WebSocket support via ws package for Neon serverless connection
 
 ### Authentication and Authorization
 
@@ -108,17 +121,17 @@ Preferred communication style: Simple, everyday language.
 - Basic form validation only
 
 **Integration Points:**
-- Supabase client configured but optional (falls back to null if credentials not provided)
-- Environment variables for Supabase URL and anonymous key
-- Future-ready for user authentication and data persistence
+- No external auth service integration
+- Future-ready for user authentication implementation
 
 ### External Dependencies
 
 **Database & Backend:**
 - Drizzle ORM (v0.44.7) - Type-safe SQL query builder
 - Postgres (v3.4.7) - PostgreSQL client
-- Supabase JS Client (v2.57.4) - Optional backend-as-a-service integration
-- Express (v5.1.0) - Web server framework
+- @neondatabase/serverless - Neon PostgreSQL serverless driver
+- ws - WebSocket library for Neon connection
+- Express (v4.21.2) - Web server framework
 
 **Validation & Type Safety:**
 - Zod (v4.1.12) - Runtime type validation
@@ -150,5 +163,5 @@ Preferred communication style: Simple, everyday language.
 - Schema.org structured data for SEO
 
 **Environment Configuration:**
-- Optional Supabase integration via environment variables
-- Graceful fallback when external services are unavailable
+- DATABASE_URL environment variable for PostgreSQL connection
+- Replit's built-in database integration for seamless deployment
