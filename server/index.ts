@@ -43,14 +43,6 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseKey) {
-    console.warn("Warning: Supabase credentials not configured. Set SUPABASE_URL and SUPABASE_ANON_KEY in Replit Secrets.");
-    console.warn("The application will start but database operations will fail.");
-  }
-
   registerRoutes(app);
 
   const distPath = path.resolve(__dirname, "../public");
@@ -78,8 +70,5 @@ app.use((req, res, next) => {
   server.listen(PORT, "0.0.0.0", () => {
     log(`Server running on port ${PORT}`);
     log(`Environment: ${isProduction ? 'production' : 'development'}`);
-    if (supabaseUrl && supabaseKey) {
-      log("Supabase configured successfully");
-    }
   });
 })();
