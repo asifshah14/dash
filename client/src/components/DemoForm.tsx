@@ -10,6 +10,16 @@ export default function DemoForm() {
 
   useIntersectionObserver(sectionRef, { staggerDelay: 100 });
 
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const toggleService = (serviceId: string) => {
+    setSelectedServices((prev: string[]) =>
+      prev.includes(serviceId)
+        ? prev.filter((id: string) => id !== serviceId)
+        : [...prev, serviceId]
+    );
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget; // Capture form reference
@@ -205,21 +215,39 @@ export default function DemoForm() {
                     { id: 'voice-agents', label: 'Voice Calling AI Agents' },
                     { id: 'ai-avatars', label: 'AI Avatars' },
                     { id: 'rag-retrieval', label: 'RAG Data Retrieval' },
-                  ].map((service) => (
-                    <div key={service.id} className="flex items-center gap-3 p-3 rounded-xl bg-light-primary/50 dark:bg-dark-primary/50 border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid/50 transition-all duration-300 cursor-pointer group/item">
-                      <input
-                        type="checkbox"
-                        id={service.id}
-                        name="service_interest"
-                        value={service.id}
-                        disabled={isSubmitting}
-                        className="w-5 h-5 rounded border-brand-slate-light/50 text-brand-teal-mid focus:ring-brand-teal-mid/50 bg-transparent"
-                      />
-                      <label htmlFor={service.id} className="text-sm font-medium text-text-light-primary dark:text-text-dark-primary cursor-pointer flex-1">
-                        {service.label}
-                      </label>
-                    </div>
-                  ))}
+                  ].map((service) => {
+                    const isSelected = selectedServices.includes(service.id);
+                    return (
+                      <div
+                        key={service.id}
+                        onClick={() => toggleService(service.id)}
+                        className={`flex items-center gap-3 p-4 rounded-xl border transition-all duration-300 cursor-pointer group/item relative overflow-hidden ${isSelected
+                          ? 'bg-brand-teal-mid/10 border-brand-teal-mid shadow-soft'
+                          : 'bg-light-primary/50 dark:bg-dark-primary/50 border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid/50 hover:bg-brand-teal-mid/5'
+                          }`}
+                      >
+                        <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors duration-300 ${isSelected
+                          ? 'bg-brand-teal-mid border-brand-teal-mid'
+                          : 'border-brand-slate-light/50 dark:border-brand-slate/50 group-hover/item:border-brand-teal-mid'
+                          }`}>
+                          {isSelected && <CheckCircle className="w-3.5 h-3.5 text-white" />}
+                        </div>
+                        <input
+                          type="checkbox"
+                          id={service.id}
+                          name="service_interest"
+                          value={service.id}
+                          checked={isSelected}
+                          onChange={() => { }} // Handled by parent div click
+                          className="hidden"
+                        />
+                        <label htmlFor={service.id} className={`text-sm font-medium cursor-pointer flex-1 transition-colors duration-300 ${isSelected ? 'text-brand-teal-dark dark:text-brand-teal-light' : 'text-text-light-primary dark:text-text-dark-primary'
+                          }`}>
+                          {service.label}
+                        </label>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
