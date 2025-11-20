@@ -11,6 +11,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-8">
         <nav className="flex justify-between items-center">
           <div className="flex items-center gap-2 group cursor-pointer">
+            <img src="/logo.png" alt="Agenticoslabs Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
             <span className="font-sans text-xl sm:text-2xl font-bold text-gradient tracking-tight transition-colors duration-300">
               Agenticoslabs
             </span>
