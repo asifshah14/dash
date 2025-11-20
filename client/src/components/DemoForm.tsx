@@ -22,8 +22,8 @@ export default function DemoForm() {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       company: formData.get('company') as string,
-      jobTitle: formData.get('job_title') as string,
-      serviceInterest: formData.get('service_interest') as string,
+      job_title: formData.get('job_title') as string,
+      service_interest: formData.get('service_interest') as string,
     };
 
     try {
