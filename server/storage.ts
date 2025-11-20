@@ -65,6 +65,7 @@ export class SupabaseStorage implements IStorage {
         company: data.company,
         job_title: data.jobTitle,
         service_interest: data.serviceInterest,
+        message: data.message,
       }])
       .select()
       .single();
@@ -80,6 +81,7 @@ export class SupabaseStorage implements IStorage {
       company: result.company,
       jobTitle: result.job_title,
       serviceInterest: result.service_interest,
+      message: result.message,
       status: result.status,
       createdAt: new Date(result.created_at),
       updatedAt: new Date(result.updated_at),

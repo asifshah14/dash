@@ -20,6 +20,7 @@ export const consultationRequests = pgTable("consultation_requests", {
   company: text("company").notNull(),
   jobTitle: text("job_title").notNull(),
   serviceInterest: text("service_interest").notNull(),
+  message: text("message"),
   status: text("status").notNull().default("pending"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),

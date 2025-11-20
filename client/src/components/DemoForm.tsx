@@ -23,7 +23,8 @@ export default function DemoForm() {
       email: formData.get('email') as string,
       company: formData.get('company') as string,
       job_title: formData.get('job_title') as string,
-      service_interest: formData.get('service_interest') as string,
+      service_interest: formData.getAll('service_interest').join(', '),
+      message: formData.get('message') as string,
     };
 
     try {
@@ -198,20 +199,45 @@ export default function DemoForm() {
                 >
                   Service Interest
                 </label>
-                <select
-                  id="service-interest"
-                  name="service_interest"
-                  required
-                  disabled={isSubmitting}
-                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 md:mb-6">
+                  {[
+                    { id: 'chat-agents', label: 'Chat AI Agents' },
+                    { id: 'voice-agents', label: 'Voice Calling AI Agents' },
+                    { id: 'ai-avatars', label: 'AI Avatars' },
+                    { id: 'rag-retrieval', label: 'RAG Data Retrieval' },
+                  ].map((service) => (
+                    <div key={service.id} className="flex items-center gap-3 p-3 rounded-xl bg-light-primary/50 dark:bg-dark-primary/50 border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid/50 transition-all duration-300 cursor-pointer group/item">
+                      <input
+                        type="checkbox"
+                        id={service.id}
+                        name="service_interest"
+                        value={service.id}
+                        disabled={isSubmitting}
+                        className="w-5 h-5 rounded border-brand-slate-light/50 text-brand-teal-mid focus:ring-brand-teal-mid/50 bg-transparent"
+                      />
+                      <label htmlFor={service.id} className="text-sm font-medium text-text-light-primary dark:text-text-dark-primary cursor-pointer flex-1">
+                        {service.label}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="scroll-reveal md:col-span-2" style={{ animationDelay: '0.45s' }}>
+                <label
+                  htmlFor="message"
+                  className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 block"
                 >
-                  <option value="">Select a service</option>
-                  <option value="chat-agents">Chat AI Agents</option>
-                  <option value="voice-agents">Voice Calling AI Agents</option>
-                  <option value="ai-avatars">AI Avatars</option>
-                  <option value="rag-retrieval">RAG Data Retrieval</option>
-                  <option value="all-services">All Services</option>
-                </select>
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  disabled={isSubmitting}
+                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-2 resize-none"
+                  placeholder="Tell us about your project needs..."
+                />
               </div>
 
               <div className="scroll-reveal md:col-span-2" style={{ animationDelay: '0.5s' }}>
