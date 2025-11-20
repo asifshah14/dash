@@ -8,9 +8,10 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-light-secondary to-light-primary dark:from-dark-secondary dark:to-dark-primary border-t-2 border-brand-slate-light/30 dark:border-brand-slate/30 transition-all duration-300 relative overflow-hidden">
-      <div className="absolute inset-0 bg-mesh-gradient-alt pointer-events-none opacity-20" />
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-brand-teal-mid/10 to-brand-emerald-mid/8 rounded-full blur-3xl" style={{ animation: 'pulse-glow 15s ease-in-out infinite' }} />
+    <footer className="aurora-bg bg-gradient-to-b from-light-secondary to-light-primary dark:from-dark-secondary dark:to-dark-primary border-t border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 relative overflow-hidden">
+      <div className="absolute inset-0 bg-mesh-gradient-alt pointer-events-none opacity-25" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-brand-teal-mid/10 to-brand-emerald-mid/8 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-brand-blue-mid/10 to-brand-teal-mid/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
       <div className="container mx-auto px-4 md:px-8 py-16 relative z-10">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -39,25 +40,25 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
                   href=""
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-gradient-to-br from-light-primary/90 to-light-secondary/90 dark:from-dark-tertiary/90 dark:to-dark-secondary/90 backdrop-blur-md border-2 border-brand-slate-light/30 dark:border-brand-slate/30 flex items-center justify-center hover:border-brand-teal-mid hover:scale-110 hover:bg-gradient-to-br hover:from-brand-teal-mid/20 hover:to-brand-emerald-mid/20 transition-all duration-300 group shadow-elevation-1 hover:shadow-elevation-2"
+                  className="card-elegant w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl flex items-center justify-center hover:scale-110 hover:shadow-soft-lg transition-all duration-500 group shadow-soft"
                   aria-label="Visit AgentX on LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5 text-brand-blue-mid group-hover:text-brand-teal-mid transition-all duration-300" />
+                  <Linkedin className="w-5 h-5 text-brand-blue-mid group-hover:text-brand-teal-mid soft-glow transition-all duration-300" />
                 </a>
                 <a
                   href=""
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-gradient-to-br from-light-primary/90 to-light-secondary/90 dark:from-dark-tertiary/90 dark:to-dark-secondary/90 backdrop-blur-md border-2 border-brand-slate-light/30 dark:border-brand-slate/30 flex items-center justify-center hover:border-brand-teal-mid hover:scale-110 hover:bg-gradient-to-br hover:from-brand-teal-mid/20 hover:to-brand-emerald-mid/20 transition-all duration-300 group shadow-elevation-1 hover:shadow-elevation-2"
+                  className="card-elegant w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl flex items-center justify-center hover:scale-110 hover:shadow-soft-lg transition-all duration-500 group shadow-soft"
                   aria-label="Visit AgentX on Instagram"
                 >
-                  <Instagram className="w-5 h-5 text-brand-teal-mid group-hover:text-brand-emerald-mid transition-all duration-300" />
+                  <Instagram className="w-5 h-5 text-brand-teal-mid group-hover:text-brand-emerald-mid soft-glow transition-all duration-300" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="pt-8 border-t-2 border-brand-slate-light/30 dark:border-brand-slate/30 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="pt-8 border-t border-brand-slate-light/20 dark:border-brand-slate/20 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-text-light-secondary dark:text-text-dark-secondary text-sm md:text-base text-center md:text-left font-medium">
               &copy; {currentYear} AgentX. All rights reserved.
             </p>

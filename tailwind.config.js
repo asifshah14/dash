@@ -99,6 +99,10 @@ export default {
         'elevation-3': '0 8px 20px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.12)',
         'elevation-4': '0 16px 40px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15)',
         'elevation-5': '0 24px 60px rgba(0, 0, 0, 0.12), 0 12px 30px rgba(0, 0, 0, 0.18)',
+        'elegant': '0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+        'elegant-hover': '0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(6, 182, 212, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+        'soft': '0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03)',
+        'soft-lg': '0 8px 30px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.04)',
       },
       backdropBlur: {
         'glass': '10px',
