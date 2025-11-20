@@ -30,7 +30,7 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
                     </p>
 
                     <section>
-                        <h2 className="font-display text-xl font-bold text-text-light-primary dark:text-text-dark-primary mb-3">
+                        <h2 className="font-display text-xl font-bold text-brand-blue-dark mb-3">
                             1. Agreement to Terms
                         </h2>
                         <p className="mb-3">
@@ -66,7 +66,7 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
                             3. Account Registration and Security
                         </h2>
 
-                        <h3 className="font-display text-lg font-semibold text-text-light-primary dark:text-text-dark-primary mb-2 mt-3">
+                        <h3 className="font-display text-lg font-semibold text-brand-blue-mid mb-2 mt-3">
                             3.1 Account Creation
                         </h3>
                         <p className="mb-3">
