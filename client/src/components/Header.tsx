@@ -6,18 +6,17 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault();
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <header className="sticky top-0 z-50 py-5 md:py-7 card-elegant backdrop-blur-xl border-b border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 shadow-soft w-full left-0 right-0">
-      <div className="mx-auto px-4 md:px-8 max-w-full">
+    <header className="sticky top-0 z-50 py-5 md:py-7 card-elegant backdrop-blur-xl border-b border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 shadow-soft">
+      <div className="container mx-auto px-4 md:px-8">
         <nav className="flex justify-between items-center">
-          <ul className="hidden md:flex gap-6 lg:gap-8 items-center justify-center flex-1">
+          <div className="flex items-center gap-2 group cursor-pointer">
+            <span className="font-sans text-xl sm:text-2xl font-bold text-gradient tracking-tight transition-colors duration-300">
+              Agenticoslabs
+            </span>
+          </div>
+
+          <ul className="hidden md:flex gap-4 lg:gap-6 items-center">
             <li>
               <a
                 href="#ai-advisory"
@@ -63,28 +62,29 @@ export default function Header() {
                 Case Studies
               </a>
             </li>
+            <li>
+              <button
+                onClick={toggleTheme}
+                className="card-elegant p-3 rounded-xl hover:scale-110 hover:shadow-soft-lg transition-all duration-300 min-w-[48px] min-h-[48px] flex items-center justify-center shadow-soft group"
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              >
+                {theme === 'light' ? (
+                  <Moon className="w-6 h-6 text-brand-blue-mid soft-glow" />
+                ) : (
+                  <Sun className="w-6 h-6 text-brand-amber-mid soft-glow" />
+                )}
+              </button>
+            </li>
+            <li>
+              <a
+                href="#demo-form"
+                className="shine-effect inline-block bg-gradient-brand text-white px-8 py-4 rounded-full font-bold hover:-translate-y-2 hover:shadow-elegant-hover transition-all duration-500 min-h-[48px] flex items-center relative overflow-hidden group shadow-elegant border border-white/20"
+                aria-label="Request a demo"
+              >
+                <span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Request Demo</span>
+              </a>
+            </li>
           </ul>
-
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="card-elegant p-3 rounded-xl hover:scale-110 hover:shadow-soft-lg transition-all duration-300 min-w-[48px] min-h-[48px] flex items-center justify-center shadow-soft group"
-              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-            >
-              {theme === 'light' ? (
-                <Moon className="w-6 h-6 text-brand-blue-mid soft-glow" />
-              ) : (
-                <Sun className="w-6 h-6 text-brand-amber-mid soft-glow" />
-              )}
-            </button>
-            <a
-              href="#demo-form"
-              className="shine-effect inline-block bg-gradient-brand text-white px-8 py-4 rounded-full font-bold hover:-translate-y-2 hover:shadow-elegant-hover transition-all duration-500 min-h-[48px] flex items-center relative overflow-hidden group shadow-elegant border border-white/20"
-              aria-label="Request a demo"
-            >
-              <span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Request Demo</span>
-            </a>
-          </div>
 
           <div className="flex md:hidden items-center gap-3">
             <button

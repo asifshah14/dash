@@ -15,8 +15,27 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
             <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-brand-blue-mid/10 to-brand-teal-mid/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
             <div className="container mx-auto px-4 md:px-8 py-16 relative z-10">
                 <div className="flex flex-col gap-8">
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                        <h3 className="font-sans text-2xl md:text-3xl font-bold text-gradient hover:scale-110 transition-all duration-500 cursor-pointer">
+                            Agenticoslabs
+                        </h3>
+
                         <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8">
+                            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-sm md:text-base">
+                                <a href="#services" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
+                                    Services
+                                </a>
+                                <a href="#features" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
+                                    Features
+                                </a>
+                                <a href="#ag-ui" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
+                                    RAG Data Retrieval
+                                </a>
+                                <a href="#demo-form" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
+                                    Contact
+                                </a>
+                            </div>
+
                             <div className="flex gap-4">
                                 <a
                                     href="https://www.linkedin.com/company/agenticoslabs"
