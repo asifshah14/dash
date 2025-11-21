@@ -25,16 +25,16 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
 
                         <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8">
                             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm md:text-base">
-                                <a href="#services" className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105">
+                                <a href="#solutions" className="px-5 py-2.5 rounded-lg text-white font-bold bg-gradient-to-r from-brand-blue-mid to-brand-teal-mid hover:shadow-elegant hover:-translate-y-1 transition-all duration-500 hover:scale-105">
                                     Services
                                 </a>
-                                <a href="#features" className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105">
+                                <a href="#agentic-transformation" className="px-5 py-2.5 rounded-lg text-white font-bold bg-gradient-to-r from-brand-teal-mid to-brand-emerald-mid hover:shadow-elegant hover:-translate-y-1 transition-all duration-500 hover:scale-105">
                                     Features
                                 </a>
-                                <a href="#ag-ui" className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105">
+                                <a href="#workflow-section" className="px-5 py-2.5 rounded-lg text-white font-bold bg-gradient-to-r from-brand-emerald-mid to-brand-blue-mid hover:shadow-elegant hover:-translate-y-1 transition-all duration-500 hover:scale-105">
                                     RAG Data Retrieval
                                 </a>
-                                <a href="#demo-form" className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105">
+                                <a href="#demo-form" className="px-5 py-2.5 rounded-lg text-white font-bold bg-gradient-to-r from-brand-blue-mid to-brand-teal-mid hover:shadow-elegant hover:-translate-y-1 transition-all duration-500 hover:scale-105">
                                     Contact
                                 </a>
                             </div>
@@ -69,13 +69,13 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
                         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm md:text-base">
                             <button
                                 onClick={onOpenPrivacy}
-                                className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105"
+                                className="px-5 py-2.5 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient bg-brand-slate-light/20 dark:bg-brand-slate/20 hover:bg-light-primary dark:hover:bg-dark-primary transition-all duration-500 hover:scale-105"
                             >
                                 Privacy Policy
                             </button>
                             <button
                                 onClick={onOpenTerms}
-                                className="px-4 py-2 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold bg-light-secondary/50 dark:bg-dark-secondary/50 hover:bg-light-primary dark:hover:bg-dark-primary hover:text-gradient transition-all duration-500 hover:scale-105"
+                                className="px-5 py-2.5 rounded-lg text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient bg-brand-slate-light/20 dark:bg-brand-slate/20 hover:bg-light-primary dark:hover:bg-dark-primary transition-all duration-500 hover:scale-105"
                             >
                                 Terms of Service
                             </button>
