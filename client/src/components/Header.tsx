@@ -6,11 +6,15 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header className="sticky top-0 z-50 py-5 md:py-7 card-elegant backdrop-blur-xl border-b border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 shadow-soft">
       <div className="container mx-auto px-4 md:px-8">
         <nav className="flex justify-between items-center">
-          <div className="flex items-center gap-2 group cursor-pointer">
+          <div className="flex items-center gap-2 group cursor-pointer" onClick={scrollToTop}>
             <img src="/logo.png" alt="Agenticoslabs Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
             <span className="font-sans text-xl sm:text-2xl font-bold text-gradient tracking-tight transition-colors duration-300">
               Agenticoslabs
