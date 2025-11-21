@@ -6,7 +6,10 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToTop = () => {
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -14,12 +17,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 py-5 md:py-7 card-elegant backdrop-blur-xl border-b border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 shadow-soft w-full left-0 right-0">
       <div className="mx-auto px-4 md:px-8 max-w-full">
         <nav className="flex justify-between items-center">
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={scrollToTop}>
+          <button onClick={scrollToTop} className="flex items-center gap-2 group cursor-pointer bg-transparent border-0 p-0" aria-label="Scroll to top">
             <img src="/logo.png" alt="Agenticoslabs Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
             <span className="font-sans text-xl sm:text-2xl font-bold text-gradient tracking-tight transition-colors duration-300">
               Agenticoslabs
             </span>
-          </div>
+          </button>
 
           <ul className="hidden md:flex gap-6 lg:gap-8 items-center justify-center flex-1">
             <li>
