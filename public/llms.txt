@@ -1,0 +1,20 @@
+# Dash 2.0 - AI Agent Platform
+> The Only Agentic AI OS Your Enterprise Will Ever Need
+
+## About
+Dash is a privacy-first, enterprise-grade AI Agency OS designed to deploy autonomous digital workers. It integrates with your existing tech stack (MongoDB, Supabase, Postgres) and supports advanced agentic workflows including RAG, webhooks, and multi-step reasoning.
+
+## Documentation
+- /docs (Coming soon)
+- /api/docs (Coming soon)
+
+## Core Features
+- Agents: Create and manage AI agents with specific roles.
+- Knowledge Base: RAG pipeline with file and website ingestion.
+- Analytics: Live monitoring of agent performance and costs.
+- Tools: MCP support and external integrations via webhooks.
+
+## Tech Stack
+- Frontend: React, Vite, TailwindCSS (Elegant UI)
+- Backend: Express, PostgreSQL (Drizzle ORM)
+- AI: OpenAI, Anthropic, Google Gemini

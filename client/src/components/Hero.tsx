@@ -24,15 +24,15 @@ export default function Hero() {
 
           <h1 className="scroll-reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.35] mb-6 md:mb-8 tracking-tight" style={{ animationDelay: '0.1s' }}>
             <span className="text-gradient block mb-4 sm:mb-6 leading-[1.35] py-2">
-              The Only Agentic AI OS
+              Next-Gen WhatsApp AI Agents
             </span>
             <span className="text-text-light-primary dark:text-text-dark-primary block leading-[1.35] py-2">
-              Your Enterprise Will Ever Need
+              Powered by Evolution API
             </span>
           </h1>
 
           <p className="scroll-reveal text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
-            Upgrade every workflow, every system, and every team with intelligent agents that understand your business as deeply as you do.
+            Automate customer support, sales, and operations on WhatsApp with intelligent agents that understand your business and your customers.
           </p>
 
           <div className="scroll-reveal max-w-4xl mx-auto mb-8 md:mb-10 px-4" style={{ animationDelay: '0.25s' }}>

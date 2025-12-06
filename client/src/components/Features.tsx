@@ -31,15 +31,15 @@ export default function Features() {
   const primaryFeatures = [
     {
       icon: MessageCircle,
-      title: 'Natural Conversations',
-      description: 'Advanced NLP enables human-like dialogue with context awareness, sentiment analysis, and multi-turn conversations.',
+      title: 'WhatsApp Automation',
+      description: 'Engage customers directly on their favorite app with 24/7 automated support and sales agents.',
       gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-start',
       glowColor: 'emerald',
     },
     {
       icon: Globe,
-      title: 'Multilingual Support',
-      description: 'Communicate with customers in 100+ languages with real-time translation and cultural adaptation.',
+      title: 'Evolution API Native',
+      description: 'Built on the robust Evolution API for stable, feature-rich WhatsApp connectivity and instance management.',
       gradient: 'from-brand-teal-mid via-brand-blue-mid to-brand-coral-start',
       glowColor: 'blue',
     },
