@@ -27,7 +27,7 @@ export default function Hero() {
               The Only Agentic AI OS
             </span>
             <span className="text-text-light-primary dark:text-text-dark-primary block leading-[1.35] py-2">
-              Powered by Evolution API
+              Your Enterprise Will Ever Need
             </span>
           </h1>
 
