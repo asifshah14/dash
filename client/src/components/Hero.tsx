@@ -32,7 +32,7 @@ export default function Hero() {
           </h1>
 
           <p className="scroll-reveal text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
-            Automate customer support, sales, and operations on WhatsApp with intelligent agents that understand your business and your customers.
+            Upgrade every workflow, every system, and every team with intelligent agents that understand your business as deeply as you do.
           </p>
 
           <div className="scroll-reveal max-w-4xl mx-auto mb-8 md:mb-10 px-4" style={{ animationDelay: '0.25s' }}>
