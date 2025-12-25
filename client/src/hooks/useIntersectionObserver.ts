@@ -31,6 +31,19 @@ export function useIntersectionObserver(
 
     if (ref.current) {
       observer.observe(ref.current);
+
+      // Immediately check if elements are already in view
+      const reveals = ref.current.querySelectorAll('.scroll-reveal');
+      const rect = ref.current.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+      if (isInView) {
+        reveals.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('revealed');
+          }, index * staggerDelay);
+        });
+      }
     }
 
     return () => observer.disconnect();
